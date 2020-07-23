@@ -24,6 +24,6 @@ class Booking < ApplicationRecord
         puts "booking_id: #{self.id}"
         type = "New Booking Request"
         guest = User.find(self.user_id)
-        Notification.create(content: "#{type} from #{guest.first_name} #{guest.last_name}", user_id: self.service.user_id, booking_id: self.id, user_avatar_key: guest.avatar.key)
+        Notification.create(content: "#{type} from #{guest.first_name} #{guest.last_name}", user_id: self.service.user_id, booking_id: self.id)
       end
 end
