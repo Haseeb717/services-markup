@@ -55,3 +55,4 @@ gem 'aws-sdk-s3', require: false
 gem 'carrierwave', '~> 1.2'
 #chart
 gem "chartkick"
+gem 'rails_12factor', group: :production
