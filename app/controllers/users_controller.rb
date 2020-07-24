@@ -43,9 +43,7 @@ class UsersController < ApplicationController
         @user = current_user
         authorize @user
         if current_user.stripe_id.blank?
-          customer = Stripe::Customer.create(
-            email: current_user.email
-          )
+          customer = Stripe::Customer.create(email: current_user.email)
           current_user.stripe_id = customer.id
           current_user.save
         else
