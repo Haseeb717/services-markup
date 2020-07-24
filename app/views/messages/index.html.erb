@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-3">
-      <%= cl_image_tag @other.avatar.attached? ? @other.avatar.key : "avatar.png", crop: :fill, class:"avatar profile-avatar mx-auto d-block mb-3" %>
+      <%= image_tag @other.avatar.attached? ? url_for(@other.avatar) : "avatar.png", crop: :fill, class:"avatar profile-avatar mx-auto d-block mb-3" %>
       <h2 class="h4 text-center">Conversation with <%= @other.first_name+' '+@other.last_name %></h2>
       <%= link_to "View profile", @other, class: "btn btn-primary d-block mt-3" %>
       <%= link_to "Back to messages", conversations_path, class: "btn btn-link d-block mt-2" %>

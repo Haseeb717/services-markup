@@ -1,5 +1,5 @@
 <% if booking.service.photo.attached? %>
-  <%= cl_image_tag booking.service.photo.key, height: 300, width: 1200, crop: :fill %>
+  <%= image_tag url_for(booking.service.photo), height: 300, width: 1200, crop: :fill %>
 <% else %>
   <%= image_tag("placeholder.jpg") %>
 <% end %>

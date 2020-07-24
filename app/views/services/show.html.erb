@@ -97,7 +97,7 @@
     <div class="border px-3 py-4 mb-3">
       <%= link_to user_path(@service_provider), class: "d-flex align-items-center justify-content-center" do  %>
         <div class="avatar card-course-user">
-            <%= cl_image_tag @service_provider.avatar.key, crop: :fill, class:"avatar profile-avatar" %>
+            <%= image_tag url_for(@service_provider.avatar), crop: :fill, class:"avatar profile-avatar" %>
         </div>
         <span class="ml-2 text-dark"><%= @service_provider.first_name + ' ' + @service_provider.last_name %></span>
       <% end %>

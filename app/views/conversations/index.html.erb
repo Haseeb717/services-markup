@@ -5,11 +5,11 @@
       <div class="mw-md mt-4">
         <% @conversations.each do |conversation| %>
             <% other = current_user == conversation.sender ? conversation.recipient : conversation.sender %>
-            <% image_key = other.avatar.attached? ? other.attached.key : "avatar.png" %>
+            <% image_key = other.avatar.attached? ? other.attached : "avatar.png" %>
             <%= link_to conversation_messages_path(conversation), class: "text-decoration-none", title: "Go to conversation" do %>
               <div class="row conversation border">
                 <% if conversation.messages.any? %>
-                  <%= cl_image_tag image_key, crop: :fill, class:"avatar profile-avatar" %>
+                  <%= image_tag url_for(image_key), crop: :fill, class:"avatar profile-avatar" %>
                   <div class="d-flex flex-column ml-3 sender">
                     <strong><%= other.first_name+' '+other.last_name%></strong>
                     <small><%= conversation.messages.last.created_at.getlocal.strftime('%H:%M %e %b') %></small>

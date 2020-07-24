@@ -1,5 +1,5 @@
 <div class="row conversation border">
-    <%= cl_image_tag notification.user_avatar_key, crop: :fill, class:"avatar" %>
+    <%= image_tag url_for(notification.user_avatar_key), crop: :fill, class:"avatar" %>
     <div class="d-flex flex-column ml-3">
         <% if notification.conversation_id.nil? == false %>
             <%= link_to conversation_messages_path(notification.conversation_id), class: "text-dark" do %>

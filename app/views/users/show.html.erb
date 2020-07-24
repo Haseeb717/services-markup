@@ -2,10 +2,10 @@
 
   <% if @user == current_user %>
     <%= link_to  "#exampleModal", "data-toggle": "modal" do %>
-      <%= cl_image_tag @user.avatar.key, height: 80, width: 80, crop: :fill, class:"avatar profile-avatar" %>
+      <%= image_tag url_for(@user.avatar), height: 80, width: 80, crop: :fill, class:"avatar profile-avatar" %>
     <% end %>
   <% else %>
-    <%= cl_image_tag @user.avatar.key, height: 80, width: 80, crop: :fill, class:"avatar profile-avatar" %>
+    <%= image_tag url_for(@user.avatar), height: 80, width: 80, crop: :fill, class:"avatar profile-avatar" %>
   <% end %>
   <h1 class="text-center mt-3 h2">
     <%= @user.first_name%> <%= @user.last_name%>

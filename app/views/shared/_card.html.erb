@@ -1,5 +1,5 @@
 <% if service.photo.attached? %>
-  <%= cl_image_tag service.photo.key, height: 300, width: 1200, crop: :fill %>
+  <%= image_tag url_for(service.photo), height: 300, width: 1200, crop: :fill %>
 <% else %>
   <%= image_tag("placeholder.jpg") %>
 <% end %>
@@ -8,7 +8,7 @@
   <%= link_to user_path(service.user) do  %>
     <div class="card-course-user mb-3">
       <% if service.user.avatar.key.nil? == false %>
-        <%= cl_image_tag service.user.avatar.key, crop: :fill, class:"avatar small" %>
+        <%= image_tag url_for(service.user.avatar), crop: :fill, class:"avatar small" %>
       <% else %>
         <%= image_tag("doug.jpg", class: "avatar small") %>
       <% end %>
