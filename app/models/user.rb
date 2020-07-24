@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :notifications
   has_one :savelist
   has_one_attached :avatar
+  has_one_attached :resume
   before_save { self.email = email.downcase}
   validates :first_name, :last_name, presence: true
   validates :email, format: { with: /\A[^@]+@[^@]+\z/}, uniqueness: true
