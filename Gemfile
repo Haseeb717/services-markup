@@ -49,8 +49,6 @@ gem 'coffee-rails'
 # gem 'mailcatcher'
 #faker for db:seeds
 gem 'faker'
-#cloudinary
-gem 'cloudinary', '~> 1.12.0'
 gem 'aws-sdk-s3', require: false
 gem 'carrierwave', '~> 1.2'
 #chart
