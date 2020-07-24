@@ -47,7 +47,8 @@ class BookingsController < ApplicationController
         @booking.service_id = params[:service_id]
         @booking.user = current_user
         @booking.cost = @booking.service.rate
-        if Booking.where(date: @booking.date).empty?
+        
+        if Booking.where(date: @booking.date,status: "confirmed").empty?
             if @booking.save
                 flash[:alert] = "You will only be charged when the booking is confirmed by the service provider"
                 redirect_to booking_path(@booking)    # redirect to page displaying the model
@@ -69,8 +70,8 @@ class BookingsController < ApplicationController
         authorize @booking
         if booking_params["status"] == "confirmed"
             if current_user.merchant_id.blank?
-                flash[:alert] = "Please connect your stripe account to receive the payment from the client"
-                return redirect_to payout_method_path
+                 flash[:alert] = "Please connect your stripe account to receive the payment from the client"
+                 return redirect_to payout_method_path
             end
             charge(@booking.service, @booking)
         end
