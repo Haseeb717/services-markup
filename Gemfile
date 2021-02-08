@@ -49,7 +49,7 @@ gem 'coffee-rails'
 #faker for db:seeds
 gem 'faker'
 gem 'aws-sdk-s3', require: false
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 #chart
 gem "chartkick"
 gem 'rails_12factor', group: :production
